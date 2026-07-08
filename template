@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>キャラ名</title>
+</head>
+
+<body>
+
+<h1>キャラ名</h1>
+
+<details id="build">
+<summary><b>ビルドまとめ</b></summary>
+
+<p>
+ここにビルドまとめを書く
+</p>
+
+</details>
+
+<br>
+
+<details id="cinema">
+<summary><b>凸効果</b></summary>
+
+<p>
+<b>1凸</b><br>
+ここに1凸効果を書く
+</p>
+
+<p>
+<b>2凸</b><br>
+ここに2凸効果を書く
+</p>
+
+<p>
+<b>4凸</b><br>
+ここに4凸効果を書く
+</p>
+
+<p>
+<b>6凸</b><br>
+ここに6凸効果を書く
+</p>
+
+</details>
+
+<br>
+
+<details id="weapon">
+<summary><b>餅武器</b></summary>
+
+<p>
+ここに餅武器を書く
+</p>
+
+</details>
+
+<br>
+
+<p><a href="index.html">← キャラ一覧へ戻る</a></p>
+
+<script>
+window.addEventListener("load", function () {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+
+    const target = document.getElementById(hash);
+    if (target && target.tagName.toLowerCase() === "details") {
+        target.open = true;
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+});
+</script>
+
+</body>
+</html>
