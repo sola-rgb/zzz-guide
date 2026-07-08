@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 <meta charset="UTF-8">
 <title>ヒューゴ</title>
@@ -10,7 +9,7 @@
 
 <h1>ヒューゴ</h1>
 
-<details>
+<details id="build">
 <summary><b>ビルドまとめ</b></summary>
 
 <p>
@@ -21,7 +20,7 @@
 
 <br>
 
-<details>
+<details id="cinema">
 <summary><b>凸効果</b></summary>
 
 <p>
@@ -48,21 +47,34 @@
 
 <br>
 
-<details>
+<details id="weapon">
 <summary><b>餅武器</b></summary>
 
 <p>
-ここに餅武器の説明を書く
+ここに餅武器を書く
 </p>
 
 </details>
 
 <br>
 
-<p>
-<a href="index.html">← キャラ一覧へ戻る</a>
-</p>
+<p><a href="index.html">← キャラ一覧へ戻る</a></p>
+
+<script>
+window.addEventListener("load", function () {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+
+    const target = document.getElementById(hash);
+    if (target && target.tagName.toLowerCase() === "details") {
+        target.open = true;
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+});
+</script>
 
 </body>
-
 </html>
